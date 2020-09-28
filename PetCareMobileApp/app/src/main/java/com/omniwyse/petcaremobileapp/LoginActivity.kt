@@ -1,5 +1,6 @@
 package com.omniwyse.petcaremobileapp
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.SpannableString
@@ -23,5 +24,9 @@ class LoginActivity : AppCompatActivity() {
         val content = SpannableString(data)
         content.setSpan(UnderlineSpan(), 0, data.length, 0)
         skip.text = content
+
+        textView2.setOnClickListener {
+            startActivity(Intent(this,RegisterActivity::class.java))
+        }
     }
 }
