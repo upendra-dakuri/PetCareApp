@@ -1,0 +1,62 @@
+    <RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+    tools:context=".OTP_Activity">
+
+            <TextView
+                android:id="@+id/otp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="OTP"
+                android:textColor="#FF5E41"
+                android:textSize="17pt"
+                android:textStyle="bold|italic" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:text="We have sent you a 4 digit verification code in the given mobile number."
+                android:textColor="#707070"/>
+           <!-- <com.chaos.view.PinView
+                android:id="@+id/pin_view"
+                style="@style/PinWidget.PinView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="30dp"
+                android:cursorVisible="true"
+                android:inputType="number"
+                android:itemBackground="#65EAEAEA"
+                app:cursorColor="#000"
+                app:hideLineWhenFilled="true"
+                app:itemCount="4"
+                app:itemHeight="50dp"
+                app:itemRadius="5dp"
+                app:itemWidth="50dp"
+                app:lineColor="@color/colorAccent"
+                app:lineWidth="1dp" />-->
+        <com.chaos.view.PinView
+            android:id="@+id/pinView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_marginStart="147dp"
+            android:layout_marginLeft="147dp"
+            android:layout_marginTop="30dp"
+            android:cursorVisible="true"
+            android:inputType="number"
+            android:itemBackground="#65EAEAEA"
+            app:cursorColor="#000"
+            app:hideLineWhenFilled="true"
+            app:itemCount="4"
+            app:itemHeight="50dp"
+            app:itemRadius="5dp"
+            app:itemWidth="50dp"
+            app:lineColor="@color/colorAccent"
+            app:lineWidth="1dp" />
+
+    </RelativeLayout>

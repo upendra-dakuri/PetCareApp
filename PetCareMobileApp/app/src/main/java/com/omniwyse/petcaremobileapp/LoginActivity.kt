@@ -13,8 +13,6 @@ class LoginActivity : AppCompatActivity() {
     private lateinit var binding: ActivityLoginBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-     /*  setContentView(R.layout.activity_login)
-        val skip=findViewById<TextView>(R.id.skip)*/
 
         //data binding used
         binding = DataBindingUtil.setContentView(this, R.layout.activity_login)
@@ -27,6 +25,9 @@ class LoginActivity : AppCompatActivity() {
 
         textView2.setOnClickListener {
             startActivity(Intent(this,RegisterActivity::class.java))
+        }
+       button.setOnClickListener {
+            startActivity(Intent(this,HomeScreenActivity::class.java))
         }
     }
 }

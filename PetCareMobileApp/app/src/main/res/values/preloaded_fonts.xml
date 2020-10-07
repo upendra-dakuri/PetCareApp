@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="preloaded_fonts" translatable="false">
+        <item>@font/amaranth_bold</item>
+        <item>@font/cambay_bold</item>
+        <item>@font/cantata_one</item>
+        <item>@font/capriola</item>
+        <item>@font/muli_bold</item>
+        <item>@font/secular_one</item>
+    </array>
+</resources>
