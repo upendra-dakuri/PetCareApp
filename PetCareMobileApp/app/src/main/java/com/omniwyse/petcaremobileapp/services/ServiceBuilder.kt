@@ -15,7 +15,7 @@ object ServiceBuilder {
         java.util.concurrent.TimeUnit.SECONDS
     )
         .readTimeout(10, java.util.concurrent.TimeUnit.SECONDS)
-        .writeTimeout(10, java.util.concurrent.TimeUnit.SECONDS);
+        .writeTimeout(10, java.util.concurrent.TimeUnit.SECONDS)
 
     // Create Retrofit Builder
     private val builder = Retrofit.Builder().baseUrl(URL)

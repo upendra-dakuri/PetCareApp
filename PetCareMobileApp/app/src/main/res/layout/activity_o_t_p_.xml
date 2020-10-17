@@ -1,23 +1,28 @@
-    <RelativeLayout
+    <ScrollView
         xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
     tools:context=".OTP_Activity">
-
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="30dp">
             <TextView
                 android:id="@+id/otp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="OTP"
+                android:layout_marginLeft="10dp"
                 android:textColor="#FF5E41"
                 android:textSize="17pt"
                 android:textStyle="bold|italic" />
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="30dp"
+                android:layout_marginTop="60dp"
                 android:text="We have sent you a 4 digit verification code in the given mobile number."
                 android:textColor="#707070"/>
            <!-- <com.chaos.view.PinView
@@ -38,25 +43,41 @@
                 app:itemWidth="50dp"
                 app:lineColor="@color/colorAccent"
                 app:lineWidth="1dp" />-->
-        <com.chaos.view.PinView
-            android:id="@+id/pinView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentLeft="true"
-            android:layout_marginStart="147dp"
-            android:layout_marginLeft="147dp"
-            android:layout_marginTop="30dp"
-            android:cursorVisible="true"
-            android:inputType="number"
-            android:itemBackground="#65EAEAEA"
-            app:cursorColor="#000"
-            app:hideLineWhenFilled="true"
-            app:itemCount="4"
-            app:itemHeight="50dp"
-            app:itemRadius="5dp"
-            app:itemWidth="50dp"
-            app:lineColor="@color/colorAccent"
-            app:lineWidth="1dp" />
 
-    </RelativeLayout>
+    <com.chaos.view.PinView
+        android:id="@+id/verificationCode"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:cursorVisible="true"
+        android:layout_marginTop="130dp"
+        android:inputType="number"
+        android:itemBackground="#65EAEAEA"
+        app:cursorColor="#000"
+        app:hideLineWhenFilled="true"
+        app:itemCount="6"
+        app:itemHeight="50dp"
+        app:itemRadius="5dp"
+        app:itemWidth="50dp"
+        app:lineColor="#FF5E41"
+        app:lineWidth="1dp"
+        style="@style/PinWidget.PinView"/>
+
+    <Button
+        android:id="@+id/submit"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:layout_marginBottom="38dp"
+        android:background="@drawable/login_shape"
+        android:text="Submit"
+        android:textColor="#FFFFFF"
+        android:layout_marginTop="220dp"
+        android:textSize="10pt"
+        android:textAllCaps="false"
+        android:layout_marginLeft="25dp"
+        app:layout_constraintBottom_toTopOf="@+id/textView2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView3" />
+</LinearLayout>
+    </ScrollView>

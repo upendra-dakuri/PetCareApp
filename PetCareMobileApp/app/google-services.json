@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "100711475523",
+    "firebase_url": "https://petcaremobileapp.firebaseio.com",
+    "project_id": "petcaremobileapp",
+    "storage_bucket": "petcaremobileapp.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:100711475523:android:716e1000b22a5e2cab67f6",
+        "android_client_info": {
+          "package_name": "com.omniwyse.petcaremobileapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "100711475523-63rg6g32o55n79d0bdr7u0c654j3614u.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCdZ7teq-9mLWawcfp4oQ4WS51gi63j2HU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "100711475523-63rg6g32o55n79d0bdr7u0c654j3614u.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

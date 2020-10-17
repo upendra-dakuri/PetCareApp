@@ -1,19 +1,17 @@
 package com.omniwyse.petcaremobileapp.services
 
+import com.omniwyse.petcaremobileapp.model.LoginData
+import com.omniwyse.petcaremobileapp.model.LoginResponse
 import com.omniwyse.petcaremobileapp.model.Services
+import com.omniwyse.petcaremobileapp.model.Users
 import retrofit2.Call
-import retrofit2.http.GET
-import retrofit2.http.POST
-import retrofit2.http.Url
+import retrofit2.http.*
 
 public interface PetcareServices {
-   @GET("displayAll")
+    @GET("displayAll")
     fun getServices(): Call<List<Services>>
-
-    @GET
-    fun getMessage(@Url anotherUrl: String): Call<String>
-/*
-    @POST("api/services/register")
-    fun getServices(): Call<List<Services>>*/
-
+    @POST("register")
+    fun register(@Body info: Users):Call<RegisterResponse>
+    @POST("login")
+    fun login(@Body info: LoginData):Call<LoginResponse>
 }

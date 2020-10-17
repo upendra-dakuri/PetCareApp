@@ -1,7 +1,5 @@
 package com.omniwyse.petcaremobileapp.helpers
 
-//import com.smartherd.globofly.activities.DestinationDetailActivity
-
 import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
