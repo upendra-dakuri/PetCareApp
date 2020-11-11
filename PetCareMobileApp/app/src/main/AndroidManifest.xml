@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.omniwyse.petcaremobileapp">
-
-    <uses-permission android:name="android.permission.INTERNET" />
-
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
     <application
-        android:usesCleartextTraffic="true"
         android:allowBackup="true"
         android:hardwareAccelerated="false"
         android:icon="@mipmap/ic_launcher"
@@ -13,8 +11,12 @@
         android:largeHeap="true"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
-        <activity android:name=".Otp_Verification_Activity"></activity>
+        android:theme="@style/AppTheme"
+        android:usesCleartextTraffic="true">
+        <activity android:name=".ResetPassword"></activity>
+        <activity android:name=".ForgotPasswordOTP" />
+        <activity android:name=".LoginOTPActivity" />
+        <activity android:name=".ForgotPassword" />
         <activity android:name=".OTP_Activity" />
         <activity android:name=".SetLocationActivity" />
         <activity android:name=".Registration" />
@@ -26,17 +28,20 @@
             android:theme="@style/Theme.AppCompat.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
         <activity android:name=".HomeScreenActivity" />
         <activity android:name=".LoginActivity" />
         <activity android:name=".RegisterActivity" />
-
         <meta-data
             android:name="preloaded_fonts"
-            android:resource="@array/preloaded_fonts" />
+            android:resource="@array/preloaded_fonts"/>
+       <meta-data
+        android:name="com.google.android.geo.API_KEY"
+        android:value="AIzaSyBzyQ0rjkkRWFQwtbHNB41VyEL7IUGI4Hw" />
+            <meta-data android:name="android.webkit.WebView.EnableSafeBrowsing"
+                android:value="false" />
     </application>
 
 </manifest>

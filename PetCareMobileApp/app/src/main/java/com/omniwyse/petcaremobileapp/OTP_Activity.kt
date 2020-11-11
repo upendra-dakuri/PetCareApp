@@ -27,7 +27,7 @@ class OTP_Activity : AppCompatActivity() {
 
 
         submit.setOnClickListener { view: View? ->
-            //authenticate()
+            authenticate()
             val uname=intent.getStringExtra("uname")
             val email=intent.getStringExtra("mail")
             val mobile=  intent.getStringExtra("number")
@@ -48,7 +48,7 @@ class OTP_Activity : AppCompatActivity() {
             onRestoreInstanceState(savedInstanceState)
         }*/
     }
-  /*  private fun authenticate () {
+    private fun authenticate () {
 
         val verifiNo = verificationCode.text.toString()
         println("verifiNo is : " + verifiNo)
@@ -100,7 +100,7 @@ class OTP_Activity : AppCompatActivity() {
     private fun toast(msg: String) {
         Toast.makeText(this, msg, Toast.LENGTH_LONG).show()
     }
-   *//* override fun onSaveInstanceState(outState: Bundle) {
+   /* override fun onSaveInstanceState(outState: Bundle) {
         super.onSaveInstanceState(outState)
         outState.putString(KEY_VERIFICATION_ID, verificationId)
     }
