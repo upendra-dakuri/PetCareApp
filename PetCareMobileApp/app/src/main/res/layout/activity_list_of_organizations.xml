@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ListOfOrganizations">
+    tools:context=".ListOfOrganizationsActivity">
 
 
     <TextView
@@ -43,12 +43,11 @@
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/destiny_recycler_view"
-        android:layout_width="409dp"
+        android:layout_width="wrap_content"
         android:layout_height="0dp"
-        android:layout_marginBottom="95dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginBottom="90dp"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName"
         tools:listitem="@layout/activity_listview_item" />
@@ -57,14 +56,14 @@
         android:id="@+id/editTextTextPersonName"
         android:layout_width="350dp"
         android:layout_height="50dp"
+        android:layout_marginLeft="5dp"
         android:layout_marginTop="80dp"
         android:layout_marginBottom="32dp"
         android:background="@drawable/register"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:layout_marginLeft="5dp"
         android:drawableRight="@drawable/ic_baseline_search_24"
+        android:ems="10"
         android:hint="Search by Location"
+        android:inputType="textPersonName"
         app:layout_constraintBottom_toTopOf="@+id/destiny_recycler_view"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

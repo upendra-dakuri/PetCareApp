@@ -11,8 +11,16 @@ import com.omniwyse.petcaremobileapp.DayCareDetailActivity
 import com.omniwyse.petcaremobileapp.R
 import com.omniwyse.petcaremobileapp.model.Services
 
-class DestinationAdapter(private val dayCareServiceDetailsList: List<Services>) : RecyclerView.Adapter<DestinationAdapter.ViewHolder>() {
-    private  var images= intArrayOf(R.drawable.img,R.drawable.img,R.drawable.img,R.drawable.img,R.drawable.img,R.drawable.img)
+class DestinationAdapter(private val dayCareServiceDetailsList: List<Services>) :
+    RecyclerView.Adapter<DestinationAdapter.ViewHolder>() {
+    private var images = intArrayOf(
+        R.drawable.img,
+        R.drawable.img,
+        R.drawable.img,
+        R.drawable.img,
+        R.drawable.img,
+        R.drawable.img
+    )
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(
@@ -27,13 +35,14 @@ class DestinationAdapter(private val dayCareServiceDetailsList: List<Services>) 
 
         holder.dayCareServiceDetails = dayCareServiceDetailsList[position]
         holder.image.setImageResource(images[position])
-        holder.orgName_Phone.text = dayCareServiceDetailsList[position].organisation.name+"\r\n"+dayCareServiceDetailsList[position].organisation.phone
+        //holder.orgName_Phone.text = dayCareServiceDetailsList[position].organisation.name+"\r\n"+dayCareServiceDetailsList[position].organisation.phone
         println("organization name is " + dayCareServiceDetailsList[position].organisation.name)
+        holder.orgName_Phone.text = dayCareServiceDetailsList[position].organisation.name
         holder.itemView.setOnClickListener { v ->
             val context = v.context
             val intent = Intent(context, DayCareDetailActivity::class.java)
             val service: Services = holder.dayCareServiceDetails!!
-            println("service is "+service)
+            println("service is " + service)
             intent.putExtra("DAYCARESERVICE", service)
             context.startActivity(intent)
         }
@@ -45,10 +54,10 @@ class DestinationAdapter(private val dayCareServiceDetailsList: List<Services>) 
 
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val orgName_Phone: TextView = itemView.findViewById(R.id.label)
-        val image:ImageView = itemView.findViewById(R.id.rimage)
+        val image: ImageView = itemView.findViewById(R.id.rimage)
         var dayCareServiceDetails: Services? = null
         override fun toString(): String {
             return """${super.toString()} '${orgName_Phone.text}'"""
         }
     }
-    }
+}

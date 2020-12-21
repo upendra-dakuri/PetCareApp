@@ -13,16 +13,16 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".ResetPassword"></activity>
-        <activity android:name=".ForgotPasswordOTP" />
+        <activity android:name=".ResetPasswordActivity"></activity>
+        <activity android:name=".ForgotPasswordOTPActivity" />
         <activity android:name=".LoginOTPActivity" />
-        <activity android:name=".ForgotPassword" />
+        <activity android:name=".ForgotPasswordActivity" />
         <activity android:name=".OTP_Activity" />
         <activity android:name=".SetLocationActivity" />
-        <activity android:name=".Registration" />
+        <activity android:name=".RegistrationActivity" />
         <activity android:name=".DayCareDetailActivity" />
-        <activity android:name=".Listview_item" />
-        <activity android:name=".ListOfOrganizations" />
+        <activity android:name=".Listview_itemActivity" />
+        <activity android:name=".ListOfOrganizationsActivity" />
         <activity
             android:name=".SplashScreenActivity"
             android:theme="@style/Theme.AppCompat.NoActionBar">

@@ -12,7 +12,7 @@ class DayCareDetailActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_day_care_detail)
 
-        city.setMovementMethod(ScrollingMovementMethod())
+        about1.setMovementMethod(ScrollingMovementMethod())
 
         // setSupportActionBar(detail_toolbar)
         // Show the Up button in the action bar.
@@ -21,19 +21,17 @@ class DayCareDetailActivity : AppCompatActivity() {
         val listOfServices = i.getSerializableExtra("DAYCARESERVICE") as Services
         loadDetails(listOfServices)
     }
-
-
     private fun loadDetails(listOfServices: Services) {
     println(" in load details1 " + listOfServices)
        // city.listOfServices.organisation.phone
-        city.setText(
-            "About \n\n" + listOfServices.daycare.description +
+        about1.setText(listOfServices.daycare.description)
+        /*about1.setText(
+            "About\n\n" + listOfServices.daycare.description +
                     "\n\nE-mail \n\n" + listOfServices.organisation.email +
                     "\n\nLocation \n\n " + listOfServices.organisation.location +
                     "\n\nPhone  \n\n" + listOfServices.organisation.phone +
                     "\n\n Timings  \n\n" + listOfServices.daycare.opentime.from +
-                    "\n" + listOfServices.daycare.opentime.to + "\n\n Price :\n" + listOfServices.daycare.price
-        )
+                    "\n" + listOfServices.daycare.opentime.to + "\n\n Price :\n" + listOfServices.daycare.price*/
         organizationName.setText(listOfServices.organisation.name)
     }
 }

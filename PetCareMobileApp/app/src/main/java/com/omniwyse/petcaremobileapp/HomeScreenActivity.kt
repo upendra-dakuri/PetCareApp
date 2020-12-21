@@ -1,22 +1,12 @@
 package com.omniwyse.petcaremobileapp
 
-import android.R.attr.thumb
 import android.content.Intent
 import android.os.Bundle
 import android.widget.ImageView
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import com.omniwyse.petcaremobileapp.model.Services
-import com.omniwyse.petcaremobileapp.services.PetcareServices
-import com.omniwyse.petcaremobileapp.services.ServiceBuilder
 import com.synnapps.carouselview.CarouselView
 import com.synnapps.carouselview.ImageListener
 import kotlinx.android.synthetic.main.activity_home_screen.*
-import kotlinx.android.synthetic.main.activity_login.*
-import okhttp3.ResponseBody
-import retrofit2.Call
-import retrofit2.Callback
-import retrofit2.Response
 
 
 class HomeScreenActivity : AppCompatActivity() {
@@ -30,7 +20,7 @@ class HomeScreenActivity : AppCompatActivity() {
         setContentView(R.layout.activity_home_screen)
 
         cardView1.setOnClickListener {
-            startActivity(Intent(this,ListOfOrganizations::class.java))
+            startActivity(Intent(this,ListOfOrganizationsActivity::class.java))
         }
 
         val carouselView = findViewById(R.id.carouselView) as CarouselView;

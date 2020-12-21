@@ -35,7 +35,7 @@ class OTP_Activity : AppCompatActivity() {
             val cpassword=intent.getStringExtra("cpwd")
             val address=intent.getStringExtra("addre")
             println("uname is :"+uname)
-            val intent = Intent(this@OTP_Activity, Registration::class.java)
+            val intent = Intent(this@OTP_Activity, RegistrationActivity::class.java)
             intent.putExtra("name", uname)
             intent.putExtra("mail", email)
             intent.putExtra("number", mobile)
@@ -74,7 +74,7 @@ class OTP_Activity : AppCompatActivity() {
                 if (task.isSuccessful) {
                     toast("Authentication Successful")
                     val user = task.result.user
-                    startActivity(Intent(this, Registration::class.java))
+                    startActivity(Intent(this, RegistrationActivity::class.java))
                     val uname=intent.getStringExtra("uname")
                     val email=intent.getStringExtra("mail")
                     val mobile=  intent.getStringExtra("number")
@@ -82,7 +82,7 @@ class OTP_Activity : AppCompatActivity() {
                     val cpassword=intent.getStringExtra("cpwd")
                     val address=intent.getStringExtra("addre")
                     println("uname is :"+uname)
-                    val intent = Intent(this@OTP_Activity, Registration::class.java)
+                    val intent = Intent(this@OTP_Activity, RegistrationActivity::class.java)
                     intent.putExtra("name", uname)
                     intent.putExtra("mail", email)
                     intent.putExtra("number", mobile)

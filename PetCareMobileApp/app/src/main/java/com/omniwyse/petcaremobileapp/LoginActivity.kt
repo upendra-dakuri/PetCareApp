@@ -1,7 +1,5 @@
 package com.omniwyse.petcaremobileapp
 
-import android.app.Activity
-import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -9,7 +7,6 @@ import android.text.SpannableString
 import android.text.style.UnderlineSpan
 import android.widget.Toast
 import androidx.databinding.DataBindingUtil
-import com.google.android.gms.tasks.TaskExecutors
 import com.google.firebase.FirebaseException
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.PhoneAuthCredential
@@ -20,9 +17,7 @@ import com.omniwyse.petcaremobileapp.model.LoginData
 import com.omniwyse.petcaremobileapp.model.LoginResponse
 import com.omniwyse.petcaremobileapp.services.FactoryAPI
 import com.omniwyse.petcaremobileapp.services.PetcareServices
-import com.omniwyse.petcaremobileapp.services.RegisterResponse
 import kotlinx.android.synthetic.main.activity_login.*
-import kotlinx.android.synthetic.main.activity_register.*
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -39,16 +34,13 @@ class LoginActivity : AppCompatActivity() {
         mAuth = FirebaseAuth.getInstance()
         mAuth.setLanguageCode(Locale.getDefault().language)
         super.onCreate(savedInstanceState)
-
         //data binding used
         binding = DataBindingUtil.setContentView(this, R.layout.activity_login)
-
         //SpannableString for Underline the text
         val data = "Skip Now"
         val content = SpannableString(data)
         content.setSpan(UnderlineSpan(), 0, data.length, 0)
         skip.text = content
-
         textView2.setOnClickListener {
             startActivity(Intent(this,RegisterActivity::class.java))
         }
@@ -59,13 +51,12 @@ class LoginActivity : AppCompatActivity() {
             verifyOTP()
         }
         fpwd.setOnClickListener{
-            startActivity(Intent(this,ForgotPassword::class.java))
+            startActivity(Intent(this,ForgotPasswordActivity::class.java))
         }
         skip.setOnClickListener{
             startActivity(Intent(this,HomeScreenActivity::class.java))
         }
     }
-
    /* private fun loginUsers(mobile: String, password: String) {
         var error = 0
         if (mobile.length < 10) {
@@ -90,7 +81,7 @@ class LoginActivity : AppCompatActivity() {
             val requestCall: Call<LoginResponse> = petcare.login(loginInfo)
             requestCall.enqueue(object: Callback<LoginResponse> {
                 override fun onResponse(call: Call<LoginResponse>, response: Response<LoginResponse>) {
-                    println("in success  body is :")
+                    //println("in success  body is :")
                     println("response body is :"+response.body())
                     if (response.isSuccessful) {
                         val msg = response.body().toString()
@@ -103,9 +94,7 @@ class LoginActivity : AppCompatActivity() {
                     println("error in Login is  : "+t)
                     Toast.makeText(applicationContext,"In failure ",Toast.LENGTH_SHORT).show()
                 }
-
             })
-
         }
     private fun verificationCallbacks() {
         mCallbacks = object : PhoneAuthProvider.OnVerificationStateChangedCallbacks() {
@@ -117,11 +106,10 @@ class LoginActivity : AppCompatActivity() {
             override fun onVerificationFailed(e: FirebaseException) {
                 println("exception is :" + e)
                 Toast.makeText(this@LoginActivity, e.message, Toast.LENGTH_LONG).show()
-
             }
             override fun onCodeSent(verfication: String, token: PhoneAuthProvider.ForceResendingToken) {
                 super.onCodeSent(verfication, token)
-                verificationNum=verfication.toString()
+                verificationNum=verfication
                 println("verificationNum is :"+verificationNum)
                 Toast.makeText(this@LoginActivity, "Verification code sent to mobile", Toast.LENGTH_LONG).show()
                 resendToken = token
